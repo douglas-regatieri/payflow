@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+//Contructor
 class UserModel {
   final String name;
   final String? photoURL;
@@ -7,7 +8,7 @@ class UserModel {
   UserModel({required this.name, this.photoURL});
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(name: map["name"], photoURL: map["photoURL"]);
+    return UserModel(name: map['name'], photoURL: map['photoURL']);
   }
 
   factory UserModel.fromJson(String json) =>
@@ -17,5 +18,6 @@ class UserModel {
         "name": name,
         "photoURL": photoURL,
       };
+
   String toJson() => jsonEncode(toMap());
 }

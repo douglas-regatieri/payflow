@@ -17,9 +17,10 @@ class LoginController {
         name: response!.displayName!,
         photoURL: response.photoUrl,
       );
-      authController.setUser(context, response);
+      authController.setUser(context, user);
       print(response);
     } catch (error) {
+      authController.setUser(context, null);
       print(error);
     }
   }
